@@ -1,0 +1,8 @@
+Description:
+    Generates a notifier with the given name.
+
+Example:
+    rails g notifier user
+
+    This will create:
+        app/notifiers/user_notifier.rb
