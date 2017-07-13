@@ -9,7 +9,8 @@ module PubsubNotifier
         @_config ||= self::Config.new
       end
 
-      def initialize(options = {}); end
+      def initialize(options = {})
+      end
 
       def notify_success(message)
         raise NotImplementedError, "#{self.class}##{__method__} is not implemented"

@@ -7,7 +7,7 @@ module PubsubNotifier
     module ClassMethods
       def subscribe(subscriber_name, options = {})
         subscriber  = subscriber_name.to_s.constantize
-        broadcaster = ( options.delete(:async) ? broadcasters[:async] : nil ) || broadcasters[:default]
+        broadcaster = (options.delete(:async) ? broadcasters[:async] : nil) || broadcasters[:default]
         broadcaster.configure(options) if broadcaster.respond_to?(:configure)
         pubsub.subscribe(subscriber, broadcaster: broadcaster)
       end
@@ -27,7 +27,7 @@ module PubsubNotifier
       pubsub.call(event, self)
     end
 
-    alias pubilish broadcast
+    alias_method :pubilish, :broadcast
 
     private
 

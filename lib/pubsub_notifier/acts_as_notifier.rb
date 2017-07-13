@@ -9,6 +9,7 @@ module PubsubNotifier
         class_eval do
           class << self
             private
+
               # Override ActionMailer::Base#method_missing
               # https://github.com/rails/rails/blob/master/actionmailer/lib/action_mailer/base.rb#L576
               def method_missing(method_name, *args)
@@ -17,6 +18,10 @@ module PubsubNotifier
                 else
                   super
                 end
+              end
+
+              def respond_to_missing?(method_name, include_all = false)
+                action_methods.include?(method_name.to_s) || super
               end
           end
         end
