@@ -19,12 +19,12 @@ module PubsubNotifier
           { wait: nil, wait_until: nil, queue: :default }
         end
 
-      class BroadcastJob < ::ActiveJob::Base
-        def perform(subscriber_name, event, args)
-          subscriber = subscriber_name.constantize
-          subscriber.public_send(event, *args)
+        class BroadcastJob < ::ActiveJob::Base
+          def perform(subscriber_name, event, args)
+            subscriber = subscriber_name.constantize
+            subscriber.public_send(event, *args)
+          end
         end
-      end
     end
   end
 end

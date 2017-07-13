@@ -1,4 +1,4 @@
-$:.push File.expand_path("../lib", __FILE__)
+$LOAD_PATH.push File.expand_path("../lib", __FILE__)
 require "pubsub_notifier/version"
 
 Gem::Specification.new do |s|
@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = PubsubNotifier::VERSION
   s.authors     = ["Yoshiyuki Hirano"]
   s.email       = ["yhirano@me.com"]
-  s.summary     = %q{Pub/Sub Notifier for Ruby on Rails}
+  s.summary     = "Pub/Sub Notifier for Ruby on Rails"
   s.description = s.summary
   s.homepage    = "https://github.com/yhirano55/pubsub_notifier"
   s.license     = "MIT"

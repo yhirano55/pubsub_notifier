@@ -2,7 +2,7 @@ module PubsubNotifier
   class Base
     class << self
       def use(name, options = {})
-        @_client = ( clients[name.to_sym] || clients[:logger] ).new(options)
+        @_client = (clients[name.to_sym] || clients[:logger]).new(options)
       end
 
       def client

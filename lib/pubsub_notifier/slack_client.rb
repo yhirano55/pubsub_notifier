@@ -1,6 +1,6 @@
-require 'net/http'
-require 'json'
-require 'uri'
+require "net/http"
+require "json"
+require "uri"
 
 module PubsubNotifier
   class SlackClient < ::PubsubNotifier::Client::Base
@@ -16,8 +16,8 @@ module PubsubNotifier
       post_slack(
         attachments: [{
           text:      message,
-          color:     'good',
-          mrkdwn_in: ['text'],
+          color:     "good",
+          mrkdwn_in: ["text"],
         }],
       )
     end
@@ -26,8 +26,8 @@ module PubsubNotifier
       post_slack(
         attachments: [{
           text:      message,
-          color:     'danger',
-          mrkdwn_in: ['text'],
+          color:     "danger",
+          mrkdwn_in: ["text"],
         }],
       )
     end
@@ -70,16 +70,16 @@ module PubsubNotifier
         config.webhook_url
       end
 
-    class Config
-      attr_accessor :default_channel, :default_username, :default_icon_emoji, :webhook_url
+      class Config
+        attr_accessor :default_channel, :default_username, :default_icon_emoji, :webhook_url
 
-      def initialize
-        @default_channel    = ENV['SLACK_DEFAULT_CHANNEL']
-        @default_username   = ENV['SLACK_DEFAULT_USERNAME']
-        @default_icon_emoji = ENV['SLACK_DEFAULT_ICON_EMOJI']
-        @webhook_url        = ENV['SLACK_WEBHOOK_URL']
+        def initialize
+          @default_channel    = ENV["SLACK_DEFAULT_CHANNEL"]
+          @default_username   = ENV["SLACK_DEFAULT_USERNAME"]
+          @default_icon_emoji = ENV["SLACK_DEFAULT_ICON_EMOJI"]
+          @webhook_url        = ENV["SLACK_WEBHOOK_URL"]
+        end
       end
-    end
   end
 end
 
