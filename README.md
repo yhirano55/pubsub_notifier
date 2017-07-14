@@ -1,5 +1,8 @@
 # PubsubNotifier
 
+[![Build Status](https://travis-ci.org/yhirano55/pubsub_notifier.svg?branch=master)](https://travis-ci.org/yhirano55/pubsub_notifier)
+[![Gem Version](https://badge.fury.io/rb/pubsub_notifier.svg)](https://badge.fury.io/rb/pubsub_notifier)
+
 Publish-Subscribe Notifier for Ruby on Rails.
 
 This gem relies on [krisleech/wisper](https://github.com/krisleech/wisper/) provides Pub/Sub capabilities.
