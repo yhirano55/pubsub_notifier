@@ -1,7 +1,7 @@
 module PubsubNotifier
   module Broadcasters
     class ActiveJobBroadcaster < Base
-      def broadcast(subscriber, publisher, event, *args)
+      def broadcast(subscriber, publisher, event, args)
         configured_job.perform_later(subscriber.name, event, args)
       rescue ActiveJob::SerializationError => e
         # NOTE: Fallback if global_id is blank
