@@ -1,5 +1,5 @@
 require '<%= File.exists?('spec/rails_helper.rb') ? 'rails_helper' : 'spec_helper' %>'
 
-describe <%= class_name %>Notifier do
-  subject { <%= class_name %>Notifier.new }
+RSpec.describe <%= class_name %>Notifier do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
