@@ -27,7 +27,7 @@ module PubsubNotifier
       pubsub.call(event, self)
     end
 
-    alias_method :pubilish, :broadcast
+    alias_method :publish, :broadcast
 
     private
 
