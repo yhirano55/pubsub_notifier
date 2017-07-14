@@ -31,7 +31,7 @@ RSpec.describe PubsubNotifier::Base do
     allow(PubsubNotifier).to receive(:config).and_return(configuration)
   end
 
-  it 'sets client' do
+  it "sets client" do
     described_class.use(name, options)
     expect(described_class.client).to be_a client
     expect(described_class.client.name).to eq :client
@@ -48,7 +48,7 @@ RSpec.describe PubsubNotifier::Base do
     expect(described_class.client.options).to eq options
   end
 
-  it 'returns client' do
+  it "returns client" do
     expect(described_class.client).not_to be_nil
     expect(described_class.client).not_to be logger
   end

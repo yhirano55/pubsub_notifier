@@ -6,11 +6,11 @@ RSpec.describe PubsubNotifier::Broadcasters::Base do
   describe "#configure" do
     before { broadcaster.configure(x: 1, y: -> { 2 }) }
 
-    it 'sets option with value' do
+    it "sets option with value" do
       expect(broadcaster.options[:x]).to eq 1
     end
 
-    it 'sets option with proc' do
+    it "sets option with proc" do
       expect(broadcaster.options[:y]).to eq 2
     end
   end

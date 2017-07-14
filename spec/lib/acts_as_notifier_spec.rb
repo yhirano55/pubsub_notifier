@@ -9,7 +9,7 @@ RSpec.describe PubsubNotifier::ActsAsNotifier do
 
       class << self
         def action_methods
-          %w(welcome)
+          %w[welcome]
         end
       end
     end
@@ -19,18 +19,18 @@ RSpec.describe PubsubNotifier::ActsAsNotifier do
     allow_any_instance_of(ActionMailer::MessageDelivery).to receive(:deliver)
   end
 
-  describe '.method_missing' do
+  describe ".method_missing" do
     subject { dummy.send(method_name) }
 
-    context 'when method_name is included one of actions' do
+    context "when method_name is included one of actions" do
       let(:method_name) { :welcome }
       it { is_expected.to be_a ActionMailer::MessageDelivery }
     end
 
-    context 'when method_name is not included one of actions' do
+    context "when method_name is not included one of actions" do
       let(:method_name) { :hello }
 
-      it 'returns raise error' do
+      it "returns raise error" do
         expect { subject }.to raise_error(NoMethodError)
       end
     end
