@@ -1,6 +1,7 @@
 <% module_namespacing do -%>
 class <%= class_name %>Notifier < ApplicationNotifier
-  use :slack
+  use :logger
+  # use :slack, channel: '#general', username: 'username', icon_emoji: ':grinning:'
 
   def success(recipient)
     notify_success("#{self.class}##{__method__} called with #{recipient.class}.")
