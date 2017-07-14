@@ -1,4 +1,4 @@
-module RSpec
+module Rspec
   module Generators
     class NotifierGenerator < ::Rails::Generators::NamedBase
       source_root File.expand_path("../templates", __FILE__)

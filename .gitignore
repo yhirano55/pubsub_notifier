@@ -10,3 +10,11 @@
 
 # rspec failure tracking
 .rspec_status
+
+# appraisal
+/gemfiles/*.gemfile.lock
+/gemfiles/vendor/
+/gemfiles/.bundle
+
+# test
+/spec/rails/
