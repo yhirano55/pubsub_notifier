@@ -3,13 +3,11 @@ class <%= class_name %>Notifier < ApplicationNotifier
   use :slack
 
   def success(recipient)
-    record = recipient
-    notify_success("#{record} has successfully created.")
+    notify_success("#{self.class}##{__method__} called with #{recipient.class}.")
   end
 
   def failure(recipient)
-    record = recipient
-    notify_failure("#{record} cannot created.")
+    notify_failure("#{self.class}##{__method__} called with #{recipient.class}.")
   end
 end
 <% end -%>
